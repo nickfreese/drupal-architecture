@@ -2,7 +2,7 @@
 
 When I started learning drupal, I found information about its actual structure difficult to find, and for good reason, the point of Drupal is to abstract that all away as much as we can reasonably manage.  But my developer's curiosity got the better of me, so here we go.
 
-I've tried to break down the architecture of this into chunks that make up the basic flow of how we get from the server calling PHP to where where our controllers are run.  I'm leaving out a LOT of detail to make this outline digestible.  My hope is that this will serve as a map for plumbing the depths of Drupal when that detail is needed.
+I've tried to break down the architecture of this into chunks that make up the basic flow of how we get from the server calling PHP to where where our controllers are run.  I'm leaving out a LOT of detail to make this outline digestible - every point outlined is surounded by plenty of actions, error handling, and configuration. My hope is that this will serve as a map for plumbing the depths of Drupal when that detail is needed.
 
 
 ### 1. Entry
