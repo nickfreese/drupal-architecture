@@ -24,7 +24,7 @@ I'd like to highlight 3 things that the Drupal Kernel Does:
 
 ### 2. The Symfony Kernel
 
-We don't have to implement an interface of it the  Syfony Kernel, or extend it to tie Drupal into it (although Drupal does give it a very light wrapper).  Instead it uses the events we mentioned earlier:
+We don't have to implement an interface of the Syfony Kernel, or extend it to tie in Drupal (although Drupal does give it a very light wrapper).  Instead it uses the events we mentioned earlier:
 
 - Dispatches the event `kernel.request`.  There are a number of listeners that this event triggers, but today we'll talk through two of them, their definitions can be found in `core/core.services.yml`.
  - `router_listener` sets the name and method of a the appropriate controller that matches our route on the request.
