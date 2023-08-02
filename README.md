@@ -15,8 +15,6 @@ One can bootstrap Drupal a number of ways, but today we'll go over the main inde
 
 ### 2. Drupal Kernel
 
-I'd like to highlight 3 things that the Drupal Kernel Does:
-
 - Sets up and understands the current environment.  Thins like checking for code caching dependencies or setting PHP session cookie settings.  
 - Creates and compiles the Dependency Injection (DI) Container `Drupal\Component\DependencyInjection\Container`.  If you're unfamiliar with dependency injection, I recommend having a quick google before continuing as its an increasingly important design pattern in the PHP world.  In this case the DI container compiles all of our service configurations from our \*services.yml files.  This includes all of our event listeners which will be important later on.
 - Creates an instance of the Symfony HttpKernel `Symfony\Component\HttpKernel\HttpKernel` that is instantiated with access to the all the events listeners/subscribers compiled with the DI container.  
