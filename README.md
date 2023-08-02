@@ -5,7 +5,7 @@ When I started learning drupal, I found information about its actual structure d
 I've tried to break down the architecture of this into chunks that make up the basic flow of how we get from the server calling PHP to where where our controllers are run.  I'm leaving out a LOT of detail to make this outline digestible.  My hope is that this will serve as a map for plumbing the depths of Drupal when that detail is needed.
 
 
-### (1) Entry
+### 1. Entry
 
 One can bootstrap Drupal a number of ways, but today we'll go over the main index.php entrypoint found at your drupal application root.  This file is short and does a few important things
  
@@ -13,7 +13,7 @@ One can bootstrap Drupal a number of ways, but today we'll go over the main inde
 - Creates a `$request` object with `Symfony\Component\HttpFoundation\Request::createFromGlobals()` that uses the globals liek `$_GET` and `$_POST` to grab all the info we need
 - Creates an instance of `Drupal\Core\DrupalKernel($autoloader)`  and then calls `handle($request)` to kickoff the whole application which will return a response object that can be used to echo our final response.
 
-### (2) Drupal Kernel
+### 2. Drupal Kernel
 
 I'd like to highlight 3 things that the Drupal Kernel Does:
 
@@ -22,7 +22,7 @@ I'd like to highlight 3 things that the Drupal Kernel Does:
 - Creates an instance of the Symfony HttpKernel `Symfony\Component\HttpKernel\HttpKernel` that is instantiated with access to the all the events listeners/subscribers compiled with the DI container.  
 - The HttpKernel's `handle($request)` function is called.
 
-### (3) The Symfony Kernel
+### 2. The Symfony Kernel
 
 We don't have to implement an interface of it the  Syfony Kernel, or extend it to tie Drupal into it (although Drupal does give it a very light wrapper).  Instead it uses the events we mentioned earlier:
 
